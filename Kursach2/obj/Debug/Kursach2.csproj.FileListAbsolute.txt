@@ -1,0 +1,10 @@
+D:\Programming\projects\Kursach2\Kursach2\Kursach2\bin\Debug\Kursach2.exe.config
+D:\Programming\projects\Kursach2\Kursach2\Kursach2\bin\Debug\Kursach2.exe
+D:\Programming\projects\Kursach2\Kursach2\Kursach2\bin\Debug\Kursach2.pdb
+D:\Programming\projects\Kursach2\Kursach2\Kursach2\obj\Debug\Kursach2.csprojAssemblyReference.cache
+D:\Programming\projects\Kursach2\Kursach2\Kursach2\obj\Debug\Kursach2.Form1.resources
+D:\Programming\projects\Kursach2\Kursach2\Kursach2\obj\Debug\Kursach2.Properties.Resources.resources
+D:\Programming\projects\Kursach2\Kursach2\Kursach2\obj\Debug\Kursach2.csproj.GenerateResource.cache
+D:\Programming\projects\Kursach2\Kursach2\Kursach2\obj\Debug\Kursach2.csproj.CoreCompileInputs.cache
+D:\Programming\projects\Kursach2\Kursach2\Kursach2\obj\Debug\Kursach2.exe
+D:\Programming\projects\Kursach2\Kursach2\Kursach2\obj\Debug\Kursach2.pdb
