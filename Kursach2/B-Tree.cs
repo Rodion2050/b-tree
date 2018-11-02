@@ -1,27 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Kursach2
 {
-    class B_Tree_Node<T> where T : Parceble, IComparable
+    class B_Tree_Node<T> where T :  IComparable
     {
-        private static int NodeCount = 0;
 
         public List<T> Keys { get; set; }
-        public bool IsInMemory { get; set; }
-        private int nodeId;
+        public int NodeId;
         public List<B_Tree_Node<T>> Pointers
         { get; set; }
 
-
-        public B_Tree_Node(T[] keys, B_Tree_Node<T>[] pointers)
+        public B_Tree_Node(T[] keys, B_Tree_Node<T>[] pointers, int nodeId)
         {
-            nodeId = NodeCount;
-            NodeCount++;
-
+            NodeId = nodeId;
             Keys = new List<T>();
             if (keys != null)
             {
@@ -42,11 +38,9 @@ namespace Kursach2
             }
         }
 
-        public B_Tree_Node()
+        public B_Tree_Node(int nodeId)
         {
-            nodeId = NodeCount;
-            NodeCount++;
-
+            NodeId = nodeId;
             Keys = new List<T>();
             this.Pointers = new List<B_Tree_Node<T>>();
         }
@@ -63,28 +57,123 @@ namespace Kursach2
 
     }
 
-    class B_Tree<T> where T : Parceble, IComparable
+    class B_Tree<T> where T :  IComparable
     {
         private B_Tree_Node<T> root;
         public B_Tree_Node<T> Root
         { get { return root; } }
-        private int t;
+        private int t;//Степень B-дерева
         private string TreeDirectory;
-
-        public B_Tree(int t)
+        private int nodeCount = 0;
+        public B_Tree(int t, keyFromString fromStr)
         {
             this.t = t;
-            root = new B_Tree_Node<T>();
-        }
-
-
-        private void ReadFromFile(B_Tree_Node<T> node)
-        {
+            KeyFromStr = fromStr;
+            root = new B_Tree_Node<T>(nodeCount++);
 
         }
+        public delegate T keyFromString(string str);
+        public keyFromString KeyFromStr;
 
-        private void WriteToFile(B_Tree_Node<T> node)
+        public void ReadFromDir(string dir)
         {
+            TreeDirectory = dir;
+            FileStream fileStream = new FileStream(dir + "/"  + "root.txt", FileMode.Open);
+            StreamReader reader = new StreamReader(fileStream);
+
+            int rootId = Convert.ToInt32(reader.ReadLine());
+            int t = Convert.ToInt32(reader.ReadLine());
+            reader.Close();
+            this.t = t;
+            this.root = new B_Tree_Node<T>(rootId);
+            nodeCount++;
+            ReadTreeFromFile_r(root);
+        } 
+
+        private void ReadTreeFromFile_r(B_Tree_Node<T> root)
+        {
+            ReadNodeFromFile(root);
+            foreach(var child in root.Pointers)
+            {
+                ReadTreeFromFile_r(child);
+            }
+        }
+
+        private void ReadNodeFromFile(B_Tree_Node<T> node)
+        {
+            FileStream fileStream = new FileStream(TreeDirectory + "/" + node.NodeId + ".txt", FileMode.Open);
+            StreamReader reader = new StreamReader(fileStream);
+            var keys = reader.ReadLine().Split('\t');
+            if(node.Keys == null)
+            {
+                node.Keys = new List<T>();
+            }
+            node.Keys.Clear();
+            foreach(var key in keys)
+            {
+                node.Keys.Add(KeyFromStr(key));
+            }
+            
+            var ids = reader.ReadLine();
+            reader.Close();
+            if(ids != null)
+            {
+                node.Pointers.Clear();
+                var childIds = ids.Split('\t');
+                foreach (var childId in childIds)
+                {
+                    node.Pointers.Add(new B_Tree_Node<T>(Convert.ToInt32(childId)));
+                    nodeCount++;
+                }
+            }
+            
+        }
+        public void Save(string dir)
+        {
+            TreeDirectory = dir;
+            FileStream fileStream = new FileStream(TreeDirectory + "/root.txt", FileMode.Create);
+            StreamWriter writer = new StreamWriter(fileStream);
+            writer.WriteLine(root.NodeId);
+            writer.WriteLine(t);
+            writer.Flush();
+            writer.Close();
+            WriteTreeToFile_r(root);
+        }
+        private void WriteTreeToFile_r(B_Tree_Node<T> root)
+        {
+            
+            WriteNodeToFile(root);
+
+            foreach(var node in root.Pointers)
+            {
+                WriteTreeToFile_r(node);
+            }
+        }
+
+        private void WriteNodeToFile(B_Tree_Node<T> node)
+        {
+            FileStream fileStream = new FileStream(TreeDirectory + "/" + node.NodeId + ".txt", FileMode.Create);
+            StreamWriter writer = new StreamWriter(fileStream);
+            for(int i = 0; i < node.Keys.Count; i++)
+            {
+                writer.Write(node.Keys[i].ToString());
+                if(i < node.Keys.Count - 1)
+                {
+                    writer.Write("\t");
+                }
+                
+            }
+            writer.WriteLine();
+            for(int i = 0; i < node.Pointers.Count; i++)
+            {
+                writer.Write(node.Pointers[i].NodeId);
+                if (i < node.Pointers.Count - 1)
+                {
+                    writer.Write("\t");
+                }
+            }
+            writer.Flush();
+            writer.Close();
         }
 
         public void Remove(T key)
@@ -193,7 +282,7 @@ namespace Kursach2
                     }
                     else
                     {
-                        var y = new B_Tree_Node<T>();
+                        var y = new B_Tree_Node<T>(nodeCount++);
                         if (i + 1 < node.Pointers.Count)
                         {
                             y = node.Pointers[i + 1];
@@ -241,7 +330,7 @@ namespace Kursach2
 
         private void Split_Child(B_Tree_Node<T> node, int i)
         {
-            var z = new B_Tree_Node<T>();
+            var z = new B_Tree_Node<T>(nodeCount++);
             var y = node.Pointers[i];
             int mid = t - 1;
             for (int j = mid + 1; j < y.Keys.Count; j++)
@@ -303,7 +392,7 @@ namespace Kursach2
         {
             if (root.Keys.Count == 2 * t - 1)
             {
-                var s = new B_Tree_Node<T>(null, new B_Tree_Node<T>[] { root });
+                var s = new B_Tree_Node<T>(null, new B_Tree_Node<T>[] { root }, nodeCount++);
                 root = s;
                 Split_Child(s, 0);
                 InsertNonfull(s, key);
@@ -314,7 +403,7 @@ namespace Kursach2
             }
         }
 
-        public class FoundElement<F> where F : Parceble, IComparable
+        public class FoundElement<F> where F : IComparable
         {
             public B_Tree_Node<F> node;
             public int index;
@@ -393,31 +482,24 @@ namespace Kursach2
         }
     }
 
-    interface Parceble
-    {
-        void FromString(string str);
-    }
 
-    class ParcebleInt : Parceble, IComparable
+    class ComparableInt : IComparable
     {
         public int Value;
-        public void FromString(string str)
-        {
-            Value = Convert.ToInt32(str);
-        }
         public override string ToString()
         {
             return Value.ToString();
         }
-        public ParcebleInt(int value)
+        public ComparableInt(int value)
         {
             Value = value;
         }
+        public static B_Tree<ComparableInt>.keyFromString FromStr = str => { return new ComparableInt(Convert.ToInt32(str)); };
         public int CompareTo(object obj)
         {
-            if (obj is ParcebleInt)
+            if (obj is ComparableInt)
             {
-                ParcebleInt n = obj as ParcebleInt;
+                ComparableInt n = obj as ComparableInt;
                 return Value.CompareTo(n.Value);
             }
             else
@@ -426,34 +508,4 @@ namespace Kursach2
             }
         }
     }
-    class ParcebleString : Parceble, IComparable
-    {
-        public string Value;
-        public ParcebleString(string str)
-        {
-            Value = str;
-        }
-        public void FromString(string str)
-        {
-            Value = str;
-        }
-        public int CompareTo(object obj)
-        {
-            if (obj is ParcebleString)
-            {
-                ParcebleString str = obj as ParcebleString;
-                return Value.CompareTo(str.Value);
-            }
-            else
-            {
-                throw new ArgumentException();
-            }
-        }
-        public override string ToString()
-        {
-            return Value;
-        }
-    }
-
-
 }

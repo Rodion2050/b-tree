@@ -10,7 +10,7 @@ namespace Kursach2
 {
     class TreeControl : Control
     {
-        private B_Tree<ParcebleInt> bTree;
+        private B_Tree<ComparableInt> bTree;
 
         private Pen rectanglePen;
         private Font stringFont = new Font("Consolas", 14, new FontStyle(), GraphicsUnit.Pixel);
@@ -18,7 +18,7 @@ namespace Kursach2
         private int oneKeyWidth = 35;
         private int delimiterSize = 1;
         private int oneNodeHeight = 20;
-        public TreeControl(B_Tree<ParcebleInt> b_Tree)
+        public TreeControl(B_Tree<ComparableInt> b_Tree)
         {
             Brush brush = new SolidBrush(Color.Black);
             rectanglePen = new Pen(brush);
@@ -26,7 +26,7 @@ namespace Kursach2
             this.bTree = b_Tree;
         }
        
-        public void updateTree(B_Tree<ParcebleInt> b_Tree)
+        public void updateTree(B_Tree<ComparableInt> b_Tree)
         {
             bTree = b_Tree;
             Invalidate();
@@ -45,7 +45,7 @@ namespace Kursach2
             public int currentNodeSize;
             public int currentNodeXBegin;
         }
-        private NodeSize DrawTree_r(B_Tree_Node<ParcebleInt> node, int x_beg, int y_beg, PaintEventArgs e)
+        private NodeSize DrawTree_r(B_Tree_Node<ComparableInt> node, int x_beg, int y_beg, PaintEventArgs e)
         {
             int x = x_beg, y = y_beg + oneNodeHeight + 20;
             int size = 0;
@@ -81,7 +81,7 @@ namespace Kursach2
             return new NodeSize() { ChildrenSize = x - x_beg, currentNodeSize = element_size, currentNodeXBegin = element_begin };
         }
 
-        private int DrawNode(B_Tree_Node<ParcebleInt> node, int x_beg, int y_beg, PaintEventArgs e)
+        private int DrawNode(B_Tree_Node<ComparableInt> node, int x_beg, int y_beg, PaintEventArgs e)
         {
             int nodeSize = node.Keys.Count * oneKeyWidth + (node.Keys.Count - 1) * delimiterSize;
             e.Graphics.DrawRectangle(rectanglePen, x_beg, y_beg, nodeSize, oneNodeHeight);
