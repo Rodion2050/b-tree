@@ -18,7 +18,8 @@ namespace Kursach2
         public Form1()
         {
             this.treeControl = new TreeControl(b_Tree);
-            this.treeControl.Location = new System.Drawing.Point(20, 100);
+            this.treeControl.Location = new System.Drawing.Point(40, 200);
+           
             this.AutoScroll = true;
             this.Controls.Add(treeControl);
             InitializeComponent();

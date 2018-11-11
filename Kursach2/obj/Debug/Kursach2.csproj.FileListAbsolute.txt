@@ -18,3 +18,12 @@ D:\Programming\projects\Kursach2\Kursach2\b-tree\Kursach2\obj\Debug\Kursach2.csp
 D:\Programming\projects\Kursach2\Kursach2\b-tree\Kursach2\obj\Debug\Kursach2.csproj.CoreCompileInputs.cache
 D:\Programming\projects\Kursach2\Kursach2\b-tree\Kursach2\obj\Debug\Kursach2.exe
 D:\Programming\projects\Kursach2\Kursach2\b-tree\Kursach2\obj\Debug\Kursach2.pdb
+D:\Programming\projects\Kursach2\Kursach2\b-tree\Kursach2\obj\Debug\Kursach2.LoginForm.resources
+D:\Programming\projects\Kursach2\Kursach2\b-tree\Kursach2\obj\Debug\Kursach2.SelectModeForm.resources
+D:\Programming\projects\Kursach2\Kursach2\b-tree\Kursach2\obj\Debug\Kursach2.TheoryForm.resources
+D:\Programming\projects\Kursach2\Kursach2\b-tree\Kursach2\obj\Debug\Kursach2.TestForm.resources
+D:\Programming\projects\Kursach2\Kursach2\b-tree\Kursach2\bin\Debug\EntityFramework.dll
+D:\Programming\projects\Kursach2\Kursach2\b-tree\Kursach2\bin\Debug\EntityFramework.SqlServer.dll
+D:\Programming\projects\Kursach2\Kursach2\b-tree\Kursach2\bin\Debug\EntityFramework.xml
+D:\Programming\projects\Kursach2\Kursach2\b-tree\Kursach2\bin\Debug\EntityFramework.SqlServer.xml
+D:\Programming\projects\Kursach2\Kursach2\b-tree\Kursach2\obj\Debug\Kursach2.csproj.CopyComplete

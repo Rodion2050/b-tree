@@ -37,16 +37,18 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 13);
+            this.textBox1.Location = new System.Drawing.Point(98, 25);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(180, 33);
             this.textBox1.TabIndex = 0;
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(120, 9);
+            this.addButton.Location = new System.Drawing.Point(171, 68);
+            this.addButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(75, 23);
+            this.addButton.Size = new System.Drawing.Size(138, 37);
             this.addButton.TabIndex = 1;
             this.addButton.Text = "Добавить";
             this.addButton.UseVisualStyleBackColor = false;
@@ -54,9 +56,10 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(120, 39);
+            this.deleteButton.Location = new System.Drawing.Point(24, 69);
+            this.deleteButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteButton.Size = new System.Drawing.Size(138, 35);
             this.deleteButton.TabIndex = 3;
             this.deleteButton.Text = "Удалить";
             this.deleteButton.UseVisualStyleBackColor = true;
@@ -64,9 +67,10 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(201, 9);
+            this.saveButton.Location = new System.Drawing.Point(514, 67);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(75, 23);
+            this.saveButton.Size = new System.Drawing.Size(197, 37);
             this.saveButton.TabIndex = 4;
             this.saveButton.Text = "Сохранить в файл";
             this.saveButton.UseVisualStyleBackColor = true;
@@ -74,9 +78,10 @@
             // 
             // readButton
             // 
-            this.readButton.Location = new System.Drawing.Point(202, 38);
+            this.readButton.Location = new System.Drawing.Point(366, 68);
+            this.readButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.readButton.Name = "readButton";
-            this.readButton.Size = new System.Drawing.Size(75, 23);
+            this.readButton.Size = new System.Drawing.Size(138, 36);
             this.readButton.TabIndex = 5;
             this.readButton.Text = "Считать";
             this.readButton.UseVisualStyleBackColor = true;
@@ -84,14 +89,17 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(725, 859);
             this.Controls.Add(this.readButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.textBox1);
+            this.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);

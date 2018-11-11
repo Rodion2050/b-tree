@@ -22,7 +22,7 @@ namespace Kursach2
         {
             Brush brush = new SolidBrush(Color.Black);
             rectanglePen = new Pen(brush);
-            Size = new Size(1000, 1000);
+            Size = new Size(100, 100);
             this.bTree = b_Tree;
         }
        
@@ -64,11 +64,11 @@ namespace Kursach2
             }
             if (x > Size.Width)
             {
-                Size = new Size(x, Size.Height);
+                Size = new Size(x + 2*oneKeyWidth, Size.Height);
             }
             if (y > Size.Height)
             {
-                Size = new Size(Size.Width, y);
+                Size = new Size(Size.Width, 2*y);
             }
             int element_begin = (x_beg + x - size - 20) / 2;
 
