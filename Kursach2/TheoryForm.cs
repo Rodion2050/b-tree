@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Kursach2
 {
@@ -15,7 +16,8 @@ namespace Kursach2
         public TheoryForm()
         {
             InitializeComponent();
-            webBrowser1.DocumentText = "<html><head></head><body><h1>Hello world</h1></body></html>";
+            string curDir = Directory.GetCurrentDirectory();
+            this.webBrowser1.Url = new Uri(String.Format("file:///{0}/all.htm", curDir));;
         }
     }
 }

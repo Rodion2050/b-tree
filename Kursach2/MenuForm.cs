@@ -11,10 +11,10 @@ using Kursach2.utils;
 
 namespace Kursach2
 {
-    public partial class SelectModeForm : Form
+    public partial class MenuForm : Form
     {
         private AppDbContext usersDb = new AppDbContext();
-        public SelectModeForm()
+        public MenuForm()
         {
             InitializeComponent();
             ShowRecordsTable();
@@ -43,7 +43,7 @@ namespace Kursach2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            new Form1().Show();
+            new TreeForm().Show();
         }
 
         private void button1_Click(object sender, EventArgs e)

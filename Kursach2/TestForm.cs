@@ -19,38 +19,52 @@ namespace Kursach2
         public TestForm()
         {
             InitializeComponent();
-
-            //AppDb.Tests.Add(new Test() { Ask = "Что такое Б-дерево", Answer1 = "1", Answer2 = "2", Answer3 = "3", Answer4 = "4", CorrectAnswerIndex = 1 });
-            //AppDb.Tests.Add(new Test() { Ask = "1", Answer1 = "1", Answer2 = "2", Answer3 = "3", Answer4 = "4", CorrectAnswerIndex = 1 });
-            //AppDb.Tests.Add(new Test() { Ask = "2", Answer1 = "1", Answer2 = "2", Answer3 = "3", Answer4 = "4", CorrectAnswerIndex = 1 });
-            //AppDb.Tests.Add(new Test() { Ask = "3", Answer1 = "1", Answer2 = "2", Answer3 = "3", Answer4 = "4", CorrectAnswerIndex = 1 });
-            //AppDb.Tests.Add(new Test() { Ask = "4", Answer1 = "1", Answer2 = "2", Answer3 = "3", Answer4 = "4", CorrectAnswerIndex = 1 });
-            //AppDb.Tests.Add(new Test() { Ask = "5", Answer1 = "1", Answer2 = "2", Answer3 = "3", Answer4 = "4", CorrectAnswerIndex = 1 });
-            //AppDb.Tests.Add(new Test() { Ask = "6", Answer1 = "1", Answer2 = "2", Answer3 = "3", Answer4 = "4", CorrectAnswerIndex = 1 });
-            //AppDb.Tests.Add(new Test() { Ask = "7", Answer1 = "1", Answer2 = "2", Answer3 = "3", Answer4 = "4", CorrectAnswerIndex = 1 });
-            //AppDb.Tests.Add(new Test() { Ask = "8", Answer1 = "1", Answer2 = "2", Answer3 = "3", Answer4 = "4", CorrectAnswerIndex = 1 });
-            //AppDb.Tests.Add(new Test() { Ask = "9", Answer1 = "1", Answer2 = "2", Answer3 = "3", Answer4 = "4", CorrectAnswerIndex = 1 });
-            //AppDb.Tests.Add(new Test() { Ask = "10", Answer1 = "1", Answer2 = "2", Answer3 = "3", Answer4 = "4", CorrectAnswerIndex = 1 });
-            //AppDb.Tests.Add(new Test() { Ask = "11", Answer1 = "1", Answer2 = "2", Answer3 = "3", Answer4 = "4", CorrectAnswerIndex = 1 });
-            //AppDb.Tests.Add(new Test() { Ask = "12", Answer1 = "1", Answer2 = "2", Answer3 = "3", Answer4 = "4", CorrectAnswerIndex = 1 });
-            //AppDb.Tests.Add(new Test() { Ask = "13", Answer1 = "1", Answer2 = "2", Answer3 = "3", Answer4 = "4", CorrectAnswerIndex = 1 });
-            //AppDb.Tests.Add(new Test() { Ask = "14", Answer1 = "1", Answer2 = "2", Answer3 = "3", Answer4 = "4", CorrectAnswerIndex = 1 });
-            //AppDb.Tests.Add(new Test() { Ask = "15", Answer1 = "1", Answer2 = "2", Answer3 = "3", Answer4 = "4", CorrectAnswerIndex = 1 });
-            //AppDb.Tests.Add(new Test() { Ask = "16", Answer1 = "1", Answer2 = "2", Answer3 = "3", Answer4 = "4", CorrectAnswerIndex = 1 });
-            //AppDb.Tests.Add(new Test() { Ask = "17", Answer1 = "1", Answer2 = "2", Answer3 = "3", Answer4 = "4", CorrectAnswerIndex = 1 });
-            //AppDb.Tests.Add(new Test() { Ask = "18", Answer1 = "1", Answer2 = "2", Answer3 = "3", Answer4 = "4", CorrectAnswerIndex = 1 });
-            //AppDb.Tests.Add(new Test() { Ask = "19", Answer1 = "1", Answer2 = "2", Answer3 = "3", Answer4 = "4", CorrectAnswerIndex = 1 });
-
-            AppDb.SaveChanges();
-
             var testsQuery = from test in AppDb.Tests
-                        select test;
+                             select test;
             var testsList = testsQuery.ToList();
-            //foreach(var t in testsList)
+            //foreach (var t in testsList)
             //{
             //    AppDb.Tests.Remove(t);
             //}
-            //AppDb.SaveChanges();
+
+            if(testsList.Count == 0)
+            {
+                AppDb.Tests.Add(new Test() { Ask = "Что такое Б-дерево", Answer1 = "алгоритм", Answer2 = "структура данных", Answer3 = "объект", Answer4 = "функция", CorrectAnswerIndex = 2 });
+                AppDb.Tests.Add(new Test() { Ask = "Если t-степень B-дерева, то корень должен содержать количество ключей", Answer1 = "t", Answer2 = "t-1", Answer3 = "от t-1 до 2t-1", Answer4 = "от 1 до 2t-1", CorrectAnswerIndex = 4 });
+                AppDb.Tests.Add(new Test() { Ask = "Если t-степень B-дерева и node-не корень, то node должен содержать количество ключей", Answer1 = "t", Answer2 = "t-1", Answer3 = "от t-1 до 2t-1", Answer4 = "от 1 до 2t-1", CorrectAnswerIndex = 3 });
+                AppDb.Tests.Add(new Test() { Ask = "Сколько потомков у листьев?", Answer1 = "t-1", Answer2 = "от t-1 до 2t-1", Answer3 = "0", Answer4 = "от 1 до 2t-1", CorrectAnswerIndex = 3 });
+                AppDb.Tests.Add(new Test() { Ask = "Чему должна быть равна степень дерева(t)", Answer1 = "t > 1", Answer2 = "t=1", Answer3 = "t > 0", Answer4 = "0<t<10", CorrectAnswerIndex = 1 });
+                AppDb.Tests.Add(new Test() { Ask = "В-деревья используются для:", Answer1 = "организации индексов в СУБД", Answer2 = "хранения данных в ОЗУ", Answer3 = "алгоритмы на графах", Answer4 = "сортировка по произвольному ключу", CorrectAnswerIndex = 1 });
+                AppDb.Tests.Add(new Test() { Ask = "Сложность поиска в B-дереве", Answer1 = "O(N^3)", Answer2 = "O(N)", Answer3 = "O(N^2)", Answer4 = "O(tlog(t, N))", CorrectAnswerIndex = 4 });
+                AppDb.Tests.Add(new Test() { Ask = "Если узел содержит n ключей, то количество потомков у него:", Answer1 = "n+1", Answer2 = "n-1", Answer3 = "n", Answer4 = "2n", CorrectAnswerIndex = 1 });
+                AppDb.Tests.Add(new Test() { Ask = "Первый потомок узла с первым ключом K[0] содержит ключи из интервала", Answer1 = "(K[1], K[2])", Answer2 = "(-inf,K[0])", Answer3 = "(K[i - 1], K[n])", Answer4 = "(K[1], K[n])", CorrectAnswerIndex = 2 });
+                AppDb.Tests.Add(new Test() { Ask = "Для 0<i<n, i-й потомок и все его потомки содержат ключи из интервала", Answer1 = "(K[i-1],K[i])", Answer2 = "(-inf,K[i])", Answer3 = "(K[i - 1], K[n])", Answer4 = "(K[i], K[n])", CorrectAnswerIndex = 1 });
+                AppDb.Tests.Add(new Test() { Ask = "n-й потомок содержит ключи из интервала", Answer1 = "(K[i-1],K[i])", Answer2 = "(-inf,K[i])", Answer3 = "(K[i - 1], K[n])", Answer4 = "(K[n-1], +inf)", CorrectAnswerIndex = 4 });
+                AppDb.Tests.Add(new Test()
+                {
+                    Ask = "Сбалансированность дерева означает",
+                    Answer1 = "длина всех путей от корня до листьев различается не более, чем на 1",
+                    Answer2 = "длина всех путей от корня до листьев различается не более, чем на 2",
+                    Answer3 = "длина всех путей от корня до листьев различается не менее, чем на 1",
+                    Answer4 = "длина всех путей от корня до листьев различается не менее, чем на 2",
+                    CorrectAnswerIndex = 1
+                });
+                AppDb.Tests.Add(new Test() { Ask = "В сильно ветвистом дереве каждый узел ссылается на следующее количество потомков", Answer1 = "< 2", Answer2 = "> 2", Answer3 = "> 1", Answer4 = "< 1", CorrectAnswerIndex = 2 });
+                AppDb.Tests.Add(new Test() { Ask = "В каком году было предложено использовать B-деревья", Answer1 = "1980", Answer2 = "1965", Answer3 = "1875", Answer4 = "1971", CorrectAnswerIndex = 3 });
+                AppDb.Tests.Add(new Test() { Ask = "Кто предложил использовать B-деревья?", Answer1 = "Н.Вирт", Answer2 = "Р.Бэйер и Е.МакКрейт", Answer3 = "Р.Хоар", Answer4 = "Э.В.Дейкстра", CorrectAnswerIndex = 2 });
+                AppDb.Tests.Add(new Test() { Ask = "Ключи в каждом узле упорядочены по:", Answer1 = "убыванию", Answer2 = "неубыванию", Answer3 = "в порядке добавления", Answer4 = "в случайном порядке", CorrectAnswerIndex = 2 });
+                AppDb.Tests.Add(new Test() { Ask = "В каком случае необходимо разбивать узел для вставки?", Answer1 = "узел содержит t+1 ключей", Answer2 = "узел содержит t-1 ключей", Answer3 = "узел содержит 2t+1 ключей", Answer4 = "узел содержит 2t-1 ключей", CorrectAnswerIndex = 4 });
+                AppDb.Tests.Add(new Test() { Ask = "В каком случае необходимо выполнить слияние или перемещение при удалениии?", Answer1 = "узел содержит t+1 ключей", Answer2 = "узел содержит t-1 ключей", Answer3 = "узел содержит 2t+1 ключей", Answer4 = "узел содержит 2t-1 ключей", CorrectAnswerIndex = 2 });
+                AppDb.Tests.Add(new Test() { Ask = "Какая вариация дерева используется в файловых системах HFS и Reiser4?", Answer1 = "B+ дерево", Answer2 = "B*-дерево", Answer3 = "B-дерево", Answer4 = "2, 3-дерево", CorrectAnswerIndex = 2 });
+                AppDb.Tests.Add(new Test() { Ask = "В чем особенность B*-дерева?", Answer1 = "каждый узел должен быть заполнен как минимум на 2/3", Answer2 = "каждый узел имеет либо 2,либо 3 ребенка", Answer3 = "вся сопутствующая информация хранится в листьях", Answer4 = "каждый узел имеет либо 4, либо 5 ключей", CorrectAnswerIndex = 1 });
+            }
+
+
+            AppDb.SaveChanges();
+
+            testsQuery = from test in AppDb.Tests
+                        select test;
+
 
             var rand = new Random();
             const int asks = 5;
@@ -100,8 +114,8 @@ namespace Kursach2
                         break;
                     }
                 }
-                answersRadioButtons[i][tests[i].CorrectAnswerIndex].ForeColor = Color.Green;
-                if(tests[i].CorrectAnswerIndex == checkedButton)
+                answersRadioButtons[i][tests[i].CorrectAnswerIndex - 1].ForeColor = Color.Green;
+                if(tests[i].CorrectAnswerIndex - 1 == checkedButton)
                 {
                     correct++;
                 }

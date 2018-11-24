@@ -11,11 +11,11 @@ using System.IO;
 
 namespace Kursach2
 {
-    public partial class Form1 : Form
+    public partial class TreeForm : Form
     {
         private TreeControl treeControl;
         private B_Tree<ComparableInt> b_Tree = new B_Tree<ComparableInt>(2, ComparableInt.FromStr);
-        public Form1()
+        public TreeForm()
         {
             this.treeControl = new TreeControl(b_Tree);
             this.treeControl.Location = new System.Drawing.Point(40, 200);
@@ -63,6 +63,50 @@ namespace Kursach2
             }
             b_Tree.ReadFromDir(path);
             treeControl.updateTree(b_Tree);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int t = Convert.ToInt32(textBox2.Text);
+                if(t <= 1)
+                {
+                    throw new FormatException();
+                }
+                B_Tree<ComparableInt> newTree = new B_Tree<ComparableInt>(t, ComparableInt.FromStr);
+                var list = b_Tree.ToList();
+                foreach(var i in list)
+                {
+                    newTree.Insert(i);
+                }
+                b_Tree = newTree;
+                treeControl.updateTree(b_Tree);
+            }catch(FormatException ex)
+            {
+                MessageBox.Show("Уровень ветвистости задается целым числом > 1");
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int k = Convert.ToInt32(textBox1.Text);
+                var res = b_Tree.Search(new ComparableInt(k));
+                if(res == null)
+                {
+                    MessageBox.Show(k + " не найдено");
+                    treeControl.updateTree(b_Tree);
+                    return;
+                }
+                treeControl.updateTreeWithFoundedElement(b_Tree, new ComparableInt(k), res.node);
+            }catch(FormatException ex)
+            {
+                MessageBox.Show("Неверный формат");
+
+            }
         }
     }
 }

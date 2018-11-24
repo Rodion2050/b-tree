@@ -1,6 +1,6 @@
 ﻿namespace Kursach2
 {
-    partial class SelectModeForm
+    partial class MenuForm
     {
         /// <summary>
         /// Required designer variable.

@@ -21,7 +21,7 @@ namespace Kursach2
             if(login != null && login != "")
             {
                 LoginForm.CurrentUser = new utils.User() { Login = login };
-                Application.Run(new SelectModeForm());
+                Application.Run(new MenuForm());
             }
             else
             {

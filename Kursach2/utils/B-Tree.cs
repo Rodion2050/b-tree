@@ -63,6 +63,11 @@ namespace Kursach2
         public B_Tree_Node<T> Root
         { get { return root; } }
         private int t;//Степень B-дерева
+        public int Branching
+        {   get { return t; }
+            set { }
+        }
+
         private string TreeDirectory;
         private int nodeCount = 0;
         public B_Tree(int t, keyFromString fromStr)
@@ -74,6 +79,10 @@ namespace Kursach2
         }
         public delegate T keyFromString(string str);
         public keyFromString KeyFromStr;
+
+
+        
+        
 
         public void ReadFromDir(string dir)
         {
@@ -341,8 +350,8 @@ namespace Kursach2
             {
                 y.Keys.RemoveAt(j);
             }
-            if (y.Pointers != null)
-            {
+            //if (y.Pointers != null)
+            //{
                 for (int j = mid + 1; j < y.Pointers.Count; j++)
                 {
                     z.Pointers.Add(y.Pointers[j]);
@@ -351,7 +360,7 @@ namespace Kursach2
                 {
                     y.Pointers.RemoveAt(j);
                 }
-            }
+            //}
 
             node.Keys.Insert(i, y.Keys[mid]);
             y.Keys.RemoveAt(mid);
@@ -364,6 +373,10 @@ namespace Kursach2
             var i = 0;
             for (i = 0; i < node.Keys.Count; i++)
             {
+                if (key.CompareTo(node.Keys[i]) == 0)
+                {
+                    return;
+                }
                 if (key.CompareTo(node.Keys[i]) < 0)
                 {
                     break;
@@ -428,13 +441,15 @@ namespace Kursach2
                 return new FoundElement<T> { index = i, node = root };
             }
 
-            if (root.Pointers != null)
+            if (root.Pointers != null && root.Pointers.Count > i)
             {
                 return Search_r(key, root.Pointers[i]);
             }
 
             return null;
         }
+
+
 
 
 
@@ -445,6 +460,29 @@ namespace Kursach2
             result += ToString(root);
 
             return result;
+        }
+
+        public List<T> ToList()
+        {
+            List<T> list = new List<T>();
+            ToList_r(Root, list);
+            return list;
+        }
+
+        private void ToList_r(B_Tree_Node<T> root, List<T> list)
+        {
+            if(root.Pointers.Count != 0)
+            {
+                foreach (var node in root.Pointers)
+                {
+                  
+                    ToList_r(node, list);
+                    //list.AddRange(list);
+                }
+            }
+            list.AddRange(root.Keys);
+
+
         }
 
         static private string ToString(B_Tree_Node<T> root, string prefix = "")

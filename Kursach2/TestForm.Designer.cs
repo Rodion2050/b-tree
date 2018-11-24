@@ -76,9 +76,9 @@
             // 
             this.askTextBox1.Location = new System.Drawing.Point(42, 12);
             this.askTextBox1.Name = "askTextBox1";
-            this.askTextBox1.Size = new System.Drawing.Size(633, 43);
+            this.askTextBox1.Size = new System.Drawing.Size(633, 80);
             this.askTextBox1.TabIndex = 0;
-            this.askTextBox1.Text = "";
+            this.askTextBox1.Text = "Какая вариация дерева используется для файловых систем HFS и Raiser4?";
             // 
             // label1
             // 
@@ -103,7 +103,7 @@
             // ask1RadioButton2
             // 
             this.ask1RadioButton2.AutoSize = true;
-            this.ask1RadioButton2.Location = new System.Drawing.Point(163, 24);
+            this.ask1RadioButton2.Location = new System.Drawing.Point(6, 64);
             this.ask1RadioButton2.Name = "ask1RadioButton2";
             this.ask1RadioButton2.Size = new System.Drawing.Size(100, 34);
             this.ask1RadioButton2.TabIndex = 2;
@@ -114,7 +114,7 @@
             // ask1RadioButton3
             // 
             this.ask1RadioButton3.AutoSize = true;
-            this.ask1RadioButton3.Location = new System.Drawing.Point(320, 24);
+            this.ask1RadioButton3.Location = new System.Drawing.Point(6, 104);
             this.ask1RadioButton3.Name = "ask1RadioButton3";
             this.ask1RadioButton3.Size = new System.Drawing.Size(100, 34);
             this.ask1RadioButton3.TabIndex = 2;
@@ -125,7 +125,7 @@
             // ask1RadioButton4
             // 
             this.ask1RadioButton4.AutoSize = true;
-            this.ask1RadioButton4.Location = new System.Drawing.Point(476, 24);
+            this.ask1RadioButton4.Location = new System.Drawing.Point(6, 144);
             this.ask1RadioButton4.Name = "ask1RadioButton4";
             this.ask1RadioButton4.Size = new System.Drawing.Size(100, 34);
             this.ask1RadioButton4.TabIndex = 2;
@@ -135,16 +135,16 @@
             // 
             // askTextBox2
             // 
-            this.askTextBox2.Location = new System.Drawing.Point(42, 138);
+            this.askTextBox2.Location = new System.Drawing.Point(42, 289);
             this.askTextBox2.Name = "askTextBox2";
-            this.askTextBox2.Size = new System.Drawing.Size(633, 43);
+            this.askTextBox2.Size = new System.Drawing.Size(633, 86);
             this.askTextBox2.TabIndex = 0;
             this.askTextBox2.Text = "";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 141);
+            this.label2.Location = new System.Drawing.Point(12, 292);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(24, 30);
             this.label2.TabIndex = 1;
@@ -164,7 +164,7 @@
             // ask2RadioButton2
             // 
             this.ask2RadioButton2.AutoSize = true;
-            this.ask2RadioButton2.Location = new System.Drawing.Point(163, 22);
+            this.ask2RadioButton2.Location = new System.Drawing.Point(5, 62);
             this.ask2RadioButton2.Name = "ask2RadioButton2";
             this.ask2RadioButton2.Size = new System.Drawing.Size(151, 34);
             this.ask2RadioButton2.TabIndex = 3;
@@ -175,7 +175,7 @@
             // ask2RadioButton3
             // 
             this.ask2RadioButton3.AutoSize = true;
-            this.ask2RadioButton3.Location = new System.Drawing.Point(320, 22);
+            this.ask2RadioButton3.Location = new System.Drawing.Point(5, 102);
             this.ask2RadioButton3.Name = "ask2RadioButton3";
             this.ask2RadioButton3.Size = new System.Drawing.Size(151, 34);
             this.ask2RadioButton3.TabIndex = 3;
@@ -186,7 +186,7 @@
             // ask2RadioButton4
             // 
             this.ask2RadioButton4.AutoSize = true;
-            this.ask2RadioButton4.Location = new System.Drawing.Point(476, 22);
+            this.ask2RadioButton4.Location = new System.Drawing.Point(6, 142);
             this.ask2RadioButton4.Name = "ask2RadioButton4";
             this.ask2RadioButton4.Size = new System.Drawing.Size(151, 34);
             this.ask2RadioButton4.TabIndex = 3;
@@ -200,9 +200,9 @@
             this.groupBox1.Controls.Add(this.ask1RadioButton2);
             this.groupBox1.Controls.Add(this.ask1RadioButton3);
             this.groupBox1.Controls.Add(this.ask1RadioButton4);
-            this.groupBox1.Location = new System.Drawing.Point(42, 61);
+            this.groupBox1.Location = new System.Drawing.Point(12, 98);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(633, 71);
+            this.groupBox1.Size = new System.Drawing.Size(662, 185);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
@@ -212,32 +212,32 @@
             this.groupBox2.Controls.Add(this.ask2RadioButton1);
             this.groupBox2.Controls.Add(this.ask2RadioButton4);
             this.groupBox2.Controls.Add(this.ask2RadioButton2);
-            this.groupBox2.Location = new System.Drawing.Point(42, 187);
+            this.groupBox2.Location = new System.Drawing.Point(12, 381);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(633, 75);
+            this.groupBox2.Size = new System.Drawing.Size(662, 187);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             // 
             // askTextBox3
             // 
-            this.askTextBox3.Location = new System.Drawing.Point(42, 268);
+            this.askTextBox3.Location = new System.Drawing.Point(710, 15);
             this.askTextBox3.Name = "askTextBox3";
-            this.askTextBox3.Size = new System.Drawing.Size(633, 43);
+            this.askTextBox3.Size = new System.Drawing.Size(633, 77);
             this.askTextBox3.TabIndex = 0;
             this.askTextBox3.Text = "";
             // 
             // askTextBox4
             // 
-            this.askTextBox4.Location = new System.Drawing.Point(42, 394);
+            this.askTextBox4.Location = new System.Drawing.Point(710, 290);
             this.askTextBox4.Name = "askTextBox4";
-            this.askTextBox4.Size = new System.Drawing.Size(633, 43);
+            this.askTextBox4.Size = new System.Drawing.Size(633, 85);
             this.askTextBox4.TabIndex = 0;
             this.askTextBox4.Text = "";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 271);
+            this.label3.Location = new System.Drawing.Point(680, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(24, 30);
             this.label3.TabIndex = 1;
@@ -246,7 +246,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 397);
+            this.label4.Location = new System.Drawing.Point(680, 316);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(24, 30);
             this.label4.TabIndex = 1;
@@ -258,9 +258,9 @@
             this.groupBox3.Controls.Add(this.ask3RadioButton2);
             this.groupBox3.Controls.Add(this.ask3RadioButton3);
             this.groupBox3.Controls.Add(this.ask3RadioButton4);
-            this.groupBox3.Location = new System.Drawing.Point(42, 317);
+            this.groupBox3.Location = new System.Drawing.Point(685, 98);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(633, 71);
+            this.groupBox3.Size = new System.Drawing.Size(658, 185);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             // 
@@ -278,7 +278,7 @@
             // ask3RadioButton2
             // 
             this.ask3RadioButton2.AutoSize = true;
-            this.ask3RadioButton2.Location = new System.Drawing.Point(163, 24);
+            this.ask3RadioButton2.Location = new System.Drawing.Point(6, 64);
             this.ask3RadioButton2.Name = "ask3RadioButton2";
             this.ask3RadioButton2.Size = new System.Drawing.Size(100, 34);
             this.ask3RadioButton2.TabIndex = 2;
@@ -289,7 +289,7 @@
             // ask3RadioButton3
             // 
             this.ask3RadioButton3.AutoSize = true;
-            this.ask3RadioButton3.Location = new System.Drawing.Point(320, 24);
+            this.ask3RadioButton3.Location = new System.Drawing.Point(6, 104);
             this.ask3RadioButton3.Name = "ask3RadioButton3";
             this.ask3RadioButton3.Size = new System.Drawing.Size(100, 34);
             this.ask3RadioButton3.TabIndex = 2;
@@ -300,7 +300,7 @@
             // ask3RadioButton4
             // 
             this.ask3RadioButton4.AutoSize = true;
-            this.ask3RadioButton4.Location = new System.Drawing.Point(476, 24);
+            this.ask3RadioButton4.Location = new System.Drawing.Point(6, 144);
             this.ask3RadioButton4.Name = "ask3RadioButton4";
             this.ask3RadioButton4.Size = new System.Drawing.Size(100, 34);
             this.ask3RadioButton4.TabIndex = 2;
@@ -314,16 +314,16 @@
             this.groupBox4.Controls.Add(this.ask4RadioButton1);
             this.groupBox4.Controls.Add(this.ask4RadioButton4);
             this.groupBox4.Controls.Add(this.ask4RadioButton2);
-            this.groupBox4.Location = new System.Drawing.Point(42, 443);
+            this.groupBox4.Location = new System.Drawing.Point(685, 381);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(633, 75);
+            this.groupBox4.Size = new System.Drawing.Size(658, 187);
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             // 
             // ask4RadioButton3
             // 
             this.ask4RadioButton3.AutoSize = true;
-            this.ask4RadioButton3.Location = new System.Drawing.Point(320, 22);
+            this.ask4RadioButton3.Location = new System.Drawing.Point(6, 102);
             this.ask4RadioButton3.Name = "ask4RadioButton3";
             this.ask4RadioButton3.Size = new System.Drawing.Size(151, 34);
             this.ask4RadioButton3.TabIndex = 3;
@@ -345,7 +345,7 @@
             // ask4RadioButton4
             // 
             this.ask4RadioButton4.AutoSize = true;
-            this.ask4RadioButton4.Location = new System.Drawing.Point(476, 22);
+            this.ask4RadioButton4.Location = new System.Drawing.Point(6, 142);
             this.ask4RadioButton4.Name = "ask4RadioButton4";
             this.ask4RadioButton4.Size = new System.Drawing.Size(151, 34);
             this.ask4RadioButton4.TabIndex = 3;
@@ -356,7 +356,7 @@
             // ask4RadioButton2
             // 
             this.ask4RadioButton2.AutoSize = true;
-            this.ask4RadioButton2.Location = new System.Drawing.Point(163, 22);
+            this.ask4RadioButton2.Location = new System.Drawing.Point(6, 62);
             this.ask4RadioButton2.Name = "ask4RadioButton2";
             this.ask4RadioButton2.Size = new System.Drawing.Size(151, 34);
             this.ask4RadioButton2.TabIndex = 3;
@@ -366,16 +366,16 @@
             // 
             // askTextBox5
             // 
-            this.askTextBox5.Location = new System.Drawing.Point(42, 524);
+            this.askTextBox5.Location = new System.Drawing.Point(41, 579);
             this.askTextBox5.Name = "askTextBox5";
-            this.askTextBox5.Size = new System.Drawing.Size(633, 43);
+            this.askTextBox5.Size = new System.Drawing.Size(633, 86);
             this.askTextBox5.TabIndex = 0;
             this.askTextBox5.Text = "";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 527);
+            this.label5.Location = new System.Drawing.Point(11, 607);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(24, 30);
             this.label5.TabIndex = 1;
@@ -387,16 +387,16 @@
             this.groupBox5.Controls.Add(this.ask5RadioButton1);
             this.groupBox5.Controls.Add(this.ask5RadioButton4);
             this.groupBox5.Controls.Add(this.ask5RadioButton2);
-            this.groupBox5.Location = new System.Drawing.Point(42, 573);
+            this.groupBox5.Location = new System.Drawing.Point(11, 661);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(633, 75);
+            this.groupBox5.Size = new System.Drawing.Size(663, 173);
             this.groupBox5.TabIndex = 5;
             this.groupBox5.TabStop = false;
             // 
             // ask5RadioButton3
             // 
             this.ask5RadioButton3.AutoSize = true;
-            this.ask5RadioButton3.Location = new System.Drawing.Point(320, 22);
+            this.ask5RadioButton3.Location = new System.Drawing.Point(9, 93);
             this.ask5RadioButton3.Name = "ask5RadioButton3";
             this.ask5RadioButton3.Size = new System.Drawing.Size(151, 34);
             this.ask5RadioButton3.TabIndex = 3;
@@ -407,18 +407,18 @@
             // ask5RadioButton1
             // 
             this.ask5RadioButton1.AutoSize = true;
-            this.ask5RadioButton1.Location = new System.Drawing.Point(6, 22);
+            this.ask5RadioButton1.Location = new System.Drawing.Point(9, 22);
             this.ask5RadioButton1.Name = "ask5RadioButton1";
-            this.ask5RadioButton1.Size = new System.Drawing.Size(151, 34);
+            this.ask5RadioButton1.Size = new System.Drawing.Size(654, 34);
             this.ask5RadioButton1.TabIndex = 3;
             this.ask5RadioButton1.TabStop = true;
-            this.ask5RadioButton1.Text = "radioButton5";
+            this.ask5RadioButton1.Text = "длина путей от корня до листьев различается не более,чем на 1";
             this.ask5RadioButton1.UseVisualStyleBackColor = true;
             // 
             // ask5RadioButton4
             // 
             this.ask5RadioButton4.AutoSize = true;
-            this.ask5RadioButton4.Location = new System.Drawing.Point(476, 22);
+            this.ask5RadioButton4.Location = new System.Drawing.Point(9, 133);
             this.ask5RadioButton4.Name = "ask5RadioButton4";
             this.ask5RadioButton4.Size = new System.Drawing.Size(151, 34);
             this.ask5RadioButton4.TabIndex = 3;
@@ -429,7 +429,7 @@
             // ask5RadioButton2
             // 
             this.ask5RadioButton2.AutoSize = true;
-            this.ask5RadioButton2.Location = new System.Drawing.Point(163, 22);
+            this.ask5RadioButton2.Location = new System.Drawing.Point(7, 59);
             this.ask5RadioButton2.Name = "ask5RadioButton2";
             this.ask5RadioButton2.Size = new System.Drawing.Size(151, 34);
             this.ask5RadioButton2.TabIndex = 3;
@@ -439,7 +439,7 @@
             // 
             // tryButton
             // 
-            this.tryButton.Location = new System.Drawing.Point(42, 654);
+            this.tryButton.Location = new System.Drawing.Point(42, 873);
             this.tryButton.Name = "tryButton";
             this.tryButton.Size = new System.Drawing.Size(134, 42);
             this.tryButton.TabIndex = 6;
@@ -449,7 +449,7 @@
             // 
             // resultTextBox
             // 
-            this.resultTextBox.Location = new System.Drawing.Point(182, 654);
+            this.resultTextBox.Location = new System.Drawing.Point(182, 873);
             this.resultTextBox.Name = "resultTextBox";
             this.resultTextBox.Size = new System.Drawing.Size(298, 42);
             this.resultTextBox.TabIndex = 7;
@@ -459,7 +459,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(689, 702);
+            this.ClientSize = new System.Drawing.Size(1355, 923);
             this.Controls.Add(this.resultTextBox);
             this.Controls.Add(this.tryButton);
             this.Controls.Add(this.groupBox5);

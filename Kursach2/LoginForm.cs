@@ -40,7 +40,7 @@ namespace Kursach2
                 //Hide();
                 CurrentUser = new User() { Login = login };
                 SaveCurrentUser(login);
-                new SelectModeForm().Show();
+                new MenuForm().Show();
                 //Close();
             }
         }
@@ -70,7 +70,7 @@ namespace Kursach2
             CurrentUser = new User() { Login = login };
             SaveCurrentUser(login);
             //Hide();
-            new SelectModeForm().Show();
+            new MenuForm().Show();
         }
 
         public static async void SaveCurrentUser(string login)
